@@ -22,7 +22,7 @@ var locals = {
 const people = [
   {name: 'Full'},
   {name: 'Stacker'},
-  {name: 'Son'}
+  {name: 'Class'}
 ];
 
 
@@ -42,7 +42,7 @@ nunjucks.render('index.html', locals, (err, output) => {
 app.use(volleyball)
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Hall of Fame', people: people });
+  res.render('index', { title: 'Fullstack', people: people });
   // res.send('Welcome!')
 })
 
