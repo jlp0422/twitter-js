@@ -37,7 +37,4 @@ for (let i = 0; i < 10; i++) {
   module.exports.add(getFakeName(), getFakeTweet());
 }
 
-console.log(_.filter([{name: 'eric'}, {name: 'jeremy'}], { name: 'eric'}));
-// console.log(data);
-console.log(find({name: /Nimit/}));
 

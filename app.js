@@ -25,6 +25,7 @@ const people = [
   {name: 'Class'}
 ];
 
+// res.render('index', {title: 'Hall of Fame', people: pepole })
 
 nunjucks.render('index.html', locals, (err, output) => {
   console.log(output)
@@ -42,7 +43,7 @@ nunjucks.render('index.html', locals, (err, output) => {
 app.use(volleyball)
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Fullstack', people: people });
+  res.render('index', { title: 'Hall of Fame', people: people });
   // res.send('Welcome!')
 })
 
