@@ -4,6 +4,7 @@ const express = require('express');
 const volleyball = require('volleyball');
 const nunjucks = require('nunjucks');
 const app = express(); // creates an instance of an express application
+const routes = require('./routes')
 
 app.set('view engine', 'html'); // have res.render work with html files
 app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
@@ -42,13 +43,17 @@ nunjucks.render('index.html', locals, (err, output) => {
 
 app.use(volleyball)
 
-app.get('/', (req, res) => {
-  res.render('index', { title: 'Hall of Fame', people: people });
-  // res.send('Welcome!')
-})
+app.use('/', routes)
 
-app.get('/news', (req, res) => {
-  res.send('This is the news page')
-})
+app.use(express.static('public'))
+
+// app.get('/', (req, res) => {
+//   res.render('index', { title: 'Hall of Fame', people: people });
+//   res.send('Welcome!')
+// })
+
+// app.get('/news', (req, res) => {
+//   res.send('This is the news page')
+// })
 
 app.listen(3000);
